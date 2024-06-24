@@ -5,5 +5,6 @@ namespace WebApplication1.Repository
     public interface IAuthenticationRepository
     {
         Task<string> CreateAuthentication(LogginDto logginDto);
+       // public bool AuthenticateUser(LogginDto logginDto);
     }
 }

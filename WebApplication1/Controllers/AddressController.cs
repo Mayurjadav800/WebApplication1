@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Dto;
@@ -16,6 +17,7 @@ namespace WebApplication1.Controllers
             _mapper = mapper;
             _addressRepository = addressRepository;
         }
+        [Authorize]
         [HttpGet("GetByAllAddress")]
         public async Task<object> Get()
         {
@@ -30,6 +32,7 @@ namespace WebApplication1.Controllers
             }
 
         }
+        [Authorize]
         [HttpPost("CreateAddress")]
         public async Task<ActionResult<AddressDto>> Create([FromBody] AddressDto addressDto)
         {

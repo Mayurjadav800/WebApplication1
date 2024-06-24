@@ -22,6 +22,7 @@ namespace WebApplication1.Mapper
             CreateMap<Address, AddressDto>().ReverseMap();
             CreateMap<Project, ProjectDto>().ReverseMap();
             CreateMap<Skill, SkillDto>().ReverseMap();
+          
         }
     }
 }

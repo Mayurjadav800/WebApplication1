@@ -17,15 +17,17 @@ namespace WebApplication1.Controllers
             _mapper = mapper;
             _employeeRepository = employeeRepository;
         }
-        [HttpGet("GetAllEmployee")]
         [Authorize]
+        [HttpGet("GetAllEmployee")]
+       
         public async Task<object> Get()
         {
             var employee = await _employeeRepository.GetAllEmployee();
             return Ok(employee);    
         }
-        [HttpGet("GetEmployyeById")]
         [Authorize]
+        [HttpGet("GetEmployyeById")]
+
         public async Task<object> GetEmployeeById([FromQuery] int employeeId)
         {
             try
@@ -42,8 +44,9 @@ namespace WebApplication1.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-        [HttpPost("CreateEmployee")]
         [Authorize]
+        [HttpPost("CreateEmployee")]
+        
         public async Task<ActionResult<EmployeeDto>> Create([FromBody] EmployeeDto employeeDto)
         {
             try
@@ -57,8 +60,9 @@ namespace WebApplication1.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-        [HttpPut("UpdateEmployee")]
         [Authorize]
+        [HttpPut("UpdateEmployee")]
+        
         public async Task<Object> Update ([FromBody] EmployeeDto employeeDto)
         {
             try
@@ -74,8 +78,9 @@ namespace WebApplication1.Controllers
                 return StatusCode(500,ex.Message);
             }
         }
-        [HttpDelete("DeleteEmployee")]
         [Authorize]
+        [HttpDelete("DeleteEmployee")]
+       
         public async Task<object> Delete([FromQuery] int Id)
         {
             try
